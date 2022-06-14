@@ -18,7 +18,6 @@ BlockVote is a blockchain based election system which lets voters elect candidat
 5. Testing : `truffle test .\test\election.js`
 6. Migrating : `truffle migrate`
 
-
 #### Run WebApp :
 2. Navigate to the folder: `cd BlockVote`
 3. Install dependencies: `npm install`
@@ -29,3 +28,5 @@ BlockVote is a blockchain based election system which lets voters elect candidat
 2. Sign In into MetaMask account
 3. Copy private key from ganache and Import account from it
 4. Connect it with BlockVote WebApp and Cast your vote
+
+Run Test after Some number of Votes For Better testing
