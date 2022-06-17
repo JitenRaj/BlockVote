@@ -74,7 +74,7 @@
   "sourceMap": "29:477:1:-;;;189:52;8:9:-1;5:2;;;30:1;27;20:12;5:2;189:52:1;225:10;217:5;;:18;;;;;;;;;;;;;;;;;;29:477;;;;;;",
   "deployedSourceMap": "29:477:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;29:477:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;346:157;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;346:157:1;;;;;;;;;;;;;;;;;;;:::i;:::-;;79:36;;;:::i;:::-;;;;;;;;;;;;;;;;;;;54:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;247:93;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;247:93:1;;;;;;;;;;;;;;;;;:::i;:::-;;346:157;398:19;431:11;398:45;;450:8;:21;;;472:24;;450:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;450:47:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;450:47:1;;;;346:157;;:::o;79:36::-;;;;:::o;54:20::-;;;;;;;;;;;;;:::o;247:93::-;325:9;298:24;:36;;;;247:93;:::o",
   "source": "pragma solidity >=0.5.16;\r\n\r\ncontract Migrations {\r\n  address public owner;\r\n  uint public last_completed_migration;\r\n\r\n  modifier restricted() {\r\n    if (msg.sender == owner) _;\r\n  }\r\n\r\n  constructor () public{\r\n    owner = msg.sender;\r\n  }\r\n\r\n  function setCompleted(uint completed) public{\r\n    last_completed_migration = completed;\r\n  }\r\n\r\n  function upgrade(address new_address) public {\r\n    Migrations upgraded = Migrations(new_address);\r\n    upgraded.setCompleted(last_completed_migration);\r\n  }\r\n}",
-  "sourcePath": "D:\\Coding\\BlockVote3\\contracts\\Migrations.sol",
+  "sourcePath": "C:\\Users\\risha\\Desktop\\BlockVote\\contracts\\Migrations.sol",
   "ast": {
     "absolutePath": "project:/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -1387,12 +1387,21 @@
     "5777": {
       "events": {},
       "links": {},
+<<<<<<< HEAD
       "address": "0x5a7d0EB5E9edb0D9B778dAb92B2C22645b6b719C",
       "transactionHash": "0x141c53c39c0b19ac0e895bf3b6993a6cacec98a693ddeb3b0b5a74195a4e552a"
     }
   },
   "schemaVersion": "3.4.5",
   "updatedAt": "2022-05-14T13:36:08.196Z",
+=======
+      "address": "0x5a268dB5Ba220612CE47FFc12B78054C0F2D20Dd",
+      "transactionHash": "0x93b3afe89e0e66c8da325b307baccfb1685a7b44a622c4e0b624ad3dc3b27019"
+    }
+  },
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-06-14T20:36:49.096Z",
+>>>>>>> e85f2bf03b4328356a7a55cc55689e5c1cb5fefa
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

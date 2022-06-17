@@ -114,7 +114,7 @@
   "sourceMap": "29:1633:0:-;;;541:420;8:9:-1;5:2;;;30:1;27;20:12;5:2;541:420:0;574:51;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:12;;;:51;;:::i;:::-;636:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:12;;;:57;;:::i;:::-;704:65;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:12;;;:65;;:::i;:::-;780:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:12;;;:61;;:::i;:::-;852:50;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:12;;;:50;;:::i;:::-;913:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:12;;;:40;;:::i;:::-;29:1633;;969:190;1051:15;;:18;;;;;;;;;;;;;1110:41;;;;;;;;1120:15;;1110:41;;;;1137:4;1110:41;;;;1142:5;1110:41;;;;1149:1;1110:41;;;1080:10;:27;1091:15;;1080:27;;;;;;;;;;;:71;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;969:190;;:::o;29:1633::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
   "deployedSourceMap": "29:1633:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;29:1633:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1167:492;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1167:492:0;;;;;;;;;;;;;;;;;:::i;:::-;;416:27;;;:::i;:::-;;;;;;;;;;;;;;;;;;;334:44;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;334:44:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;334:44:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;334:44:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;240:38;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;240:38:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1167:492;1279:6;:18;1286:10;1279:18;;;;;;;;;;;;;;;;;;;;;;;;;1278:19;1270:28;;;;;;1372:1;1357:12;:16;:51;;;;;1393:15;;1377:12;:31;;1357:51;1349:60;;;;;;1483:4;1462:6;:18;1469:10;1462:18;;;;;;;;;;;;;;;;:25;;;;;;;;;;;;;;;;;;1540:10;:24;1551:12;1540:24;;;;;;;;;;;:34;;;:37;;;;;;;;;;;;;1638:12;1627:24;;;;;;;;;;1167:492;:::o;416:27::-;;;;:::o;334:44::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;240:38::-;;;;;;;;;;;;;;;;;;;;;;:::o",
   "source": "pragma solidity >=0.5.16;\r\n\r\ncontract Election {\r\n    // Model a Candidate\r\n    struct Candidate {\r\n        uint id;\r\n        string name;\r\n        string party;\r\n        uint voteCount;\r\n    }\r\n\r\n    // Store accounts that have voted\r\n    mapping(address => bool) public voters;\r\n    // Store Candidates\r\n    // Fetch Candidate\r\n    mapping(uint => Candidate) public candidates;\r\n    // Store Candidates Count\r\n    uint public candidatesCount;\r\n\r\n    // voted event\r\n    event votedEvent (\r\n        uint indexed _candidateId\r\n    );\r\n\r\n    constructor () public {\r\n        addCandidate(\"Raju Bista\",\"Bharatiya Janata Party\");\r\n        addCandidate(\"Sankar Malakar\",\"Indian National Congress\");\r\n        addCandidate(\"Saman Pathak\",\"Communist Party Of India (Marxist)\");\r\n        addCandidate(\"Amar Singh Rai\",\"All India Trinamool Congress\");\r\n        addCandidate(\"Sudip Mandal\",\"Bahujan Samaj Party\");\r\n        addCandidate(\"NOTA\",\"None of the above\");\r\n    }\r\n\r\n    function addCandidate (string memory name,string memory party) private {\r\n        candidatesCount ++;\r\n        candidates[candidatesCount] = Candidate(candidatesCount, name,party, 0);\r\n    }\r\n\r\n    function vote (uint _candidateId) public {\r\n        // require that they haven't voted before\r\n        require(!voters[msg.sender]);\r\n\r\n        // require a valid candidate\r\n        require(_candidateId > 0 && _candidateId <= candidatesCount);\r\n\r\n        // record that voter has voted\r\n        voters[msg.sender] = true;\r\n\r\n        // update candidate vote Count\r\n        candidates[_candidateId].voteCount ++;\r\n\r\n        // trigger voted event\r\n        emit votedEvent(_candidateId);\r\n    }\r\n}",
-  "sourcePath": "D:\\Coding\\BlockVote3\\contracts\\Election.sol",
+  "sourcePath": "C:\\Users\\risha\\Desktop\\BlockVote\\contracts\\Election.sol",
   "ast": {
     "absolutePath": "project:/contracts/Election.sol",
     "exportedSymbols": {
@@ -3620,12 +3620,21 @@
         }
       },
       "links": {},
+<<<<<<< HEAD
       "address": "0xcfc2FDCEa54039671BFe4C8b65C037B8Ad32B862",
       "transactionHash": "0x0d22597c0c74b2895f64d6bfe3e96f91ffcb7109b064cbab6812b574951fccd8"
     }
   },
   "schemaVersion": "3.4.5",
   "updatedAt": "2022-05-14T13:36:08.191Z",
+=======
+      "address": "0x59913Fc64B90B036C4f296d335C853e48bD91EEc",
+      "transactionHash": "0x7d30c89ca9ec95762af308e6b5ef064f958db8958974a7118fffd71d9452f8c7"
+    }
+  },
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-06-14T20:36:49.087Z",
+>>>>>>> e85f2bf03b4328356a7a55cc55689e5c1cb5fefa
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
