@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BlockVote</title>
+  <title>Results</title>
   <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
 
   <link href="css/landing.css" rel="stylesheet">
@@ -35,12 +35,16 @@
   </div>
 
   <!-- Content   -->
+
+
   <div id="content" style="display: none;">
     <div class="container" id="votingPage">
       <div class="row" id="check-web3" style="margin-top: 30px;"></div>
+      <div><h1 style="text-align:center; margin-bottom: 50px; color: rgb(29, 108, 218);">
+        <b><u>Results</u></b></h1></div>
       <div class="row">
         <div class="col-lg-6 col-sm-12">
-          <img src="https://www.svgrepo.com/show/7286/vote.svg" style="margin-top: 10%" width="320px" alt="">
+          <img src="./img/vote-side-image2.PNG" style="margin-top: 10%" width="400px" alt="">
         </div>
         <div class="col-lg-6 col-sm-12">
           <div>
@@ -50,33 +54,20 @@
                   <th>#</th>
                   <th>Candidate Name</th>
                   <th>Party</th>
+                  <th>Votes</th>
                 </tr>
               </thead>
               <tbody id="candidatesResults">
               </tbody>
             </table>
             <hr />
-            <form onSubmit="App.castVote(); return false;">
-              <div class="form-group">
-                <label for="candidatesSelect">Select Candidate</label>
-                <select class="form-control" id="candidatesSelect">
-                </select>
-              </div>
-              <button type="submit" class="btn btn-primary btn-success center-block">Vote</button>
-              <hr />
-            </form>
-            <p id="accountAddress" class="text-center"></p>
           </div>
         </div>
-      </div><br>
-      <div class="row" id="vote-msg" style="margin-top: 30px;">
-      </div>
     </div>
 
 
 
   </div>
-  <script src="js/navbar.js"></script>
   <script>
     window.addEventListener('load', function() {
   if (typeof web3 !== 'undefined') {
@@ -101,7 +92,7 @@
     crossorigin="anonymous"></script>
   <script src="js/web3.min.js"></script>
   <script src="js/truffle-contract.js"></script>
-  <script src="js/voteCast.js"></script>
+  <script src="js/app.js"></script>
 
 </body>
 
